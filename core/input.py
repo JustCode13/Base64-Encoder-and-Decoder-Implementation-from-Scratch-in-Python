@@ -29,3 +29,11 @@ def get_input():
         print(output["error"])
 
     return value
+
+
+def build_request(mode, value):
+
+    input_kind = "text" if mode == "encode" else "base64"
+    request = {"mode": mode, "raw_input": value, "input_kind": input_kind}
+
+    return request
