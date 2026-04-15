@@ -5,7 +5,7 @@ def make_success(value):
 
 def make_failure(error_type, message):
     output = {
-        "ok": True,
+        "ok": False,
         "value": None,
         "error": {"error_type": error_type, "message": message},
     }
