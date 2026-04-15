@@ -1,0 +1,31 @@
+from contracts import make_failure
+from errors import INVALID_MODE
+from errors import MODE_MISSING
+from errors import INVALID_INPUT_KIND
+from constants import VALID_MODES
+
+
+def get_mode():
+    mode = input("Enter Mode (encode/decode):").strip()
+    if not mode:
+        output = make_failure(MODE_MISSING, "Mode input is empty - (get_mode)")
+        print(output["error"])
+
+    if mode not in VALID_MODES:
+        output = make_failure(
+            INVALID_MODE, "valid modes are (encode/decode) - (get_mode)"
+        )
+        print(output["error"])
+
+    return mode
+
+
+def get_input():
+    value = input("Enter the Value:").strip()
+    if not value or value == None:
+        output = make_failure(
+            INVALID_INPUT_KIND, "Input is empty please enter something - (get_input)"
+        )
+        print(output["error"])
+
+    return value
