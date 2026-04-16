@@ -3,6 +3,7 @@ from errors import INVALID_MODE
 from errors import MODE_MISSING
 from errors import INVALID_INPUT_KIND
 from constants import VALID_MODES
+import sys
 
 
 def get_mode():
@@ -10,12 +11,14 @@ def get_mode():
     if not mode:
         output = make_failure(MODE_MISSING, "Mode input is empty - (get_mode)")
         print(output["error"])
+        sys.exit()
 
     if mode not in VALID_MODES:
         output = make_failure(
             INVALID_MODE, "valid modes are (encode/decode) - (get_mode)"
         )
         print(output["error"])
+        sys.exit()
 
     return mode
 
@@ -27,6 +30,7 @@ def get_input():
             INVALID_INPUT_KIND, "Input is empty please enter something - (get_input)"
         )
         print(output["error"])
+        sys.exit()
 
     return value
 
