@@ -1,0 +1,2 @@
+validate_func_output =  {'ok': True, 'value': {'mode': 'encode', 'raw_input': 'hello', 'input_kind': 'text'}, 'error': None}
+normalize_func_output = {'ok': True, 'mode': 'encode', 'data_bytes': b'hello', 'data_len': 5}
