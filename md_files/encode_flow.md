@@ -28,3 +28,9 @@ b'Hi' = [72, 105]                    # raw_input.encode("utf-8")
 → "SGk"                             # Base64 map
 → "SGk="                            # padding added
 ```
+
+
+
+hello 
+
+5 % 3 = 

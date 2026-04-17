@@ -3,6 +3,7 @@ from core.handle import validate_reqest
 from core.normalize import normalize_request
 from encode.bits_encoder import build_bit_stream
 from encode.groups import _6bit_groups
+from encode.base64 import get_base64
 
 
 def main():
@@ -16,8 +17,12 @@ def main():
 
     if mode == "encode":
         bit_stream = build_bit_stream(normalized_request)
-        result = _6bit_groups(bit_stream)
-        print(result)
+        output = _6bit_groups(bit_stream)
+        final_result = get_base64(output, normalized_request["byte_length"])
+
+        print(
+            f"Ok: {final_result.get("ok")}\nMode: {final_result.get("mode")} | Result Text: {final_result.get("base64_text")}\nError: {final_result.get("error")}"
+        )
 
 
 if __name__ == "__main__":

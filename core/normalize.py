@@ -20,7 +20,7 @@ def normalize_encode_request(value):
         "ok": True,
         "mode": mode,
         "data_bytes": encoded_raw_input,
-        "data_len": raw_input_len,
+        "byte_length": raw_input_len,
     }
 
 
