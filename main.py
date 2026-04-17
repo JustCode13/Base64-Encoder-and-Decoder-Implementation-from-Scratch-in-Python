@@ -2,6 +2,7 @@ from core.input import get_mode, get_input, build_request
 from core.handle import validate_reqest
 from core.normalize import normalize_request
 from encode.bits_encoder import build_bit_stream
+from encode.groups import _6bit_groups
 
 
 def main():
@@ -14,7 +15,9 @@ def main():
     mode = normalized_request.get("mode")
 
     if mode == "encode":
-        build_bit_stream(normalized_request)
+        bit_stream = build_bit_stream(normalized_request)
+        result = _6bit_groups(bit_stream)
+        print(result)
 
 
 if __name__ == "__main__":

@@ -14,4 +14,4 @@ def build_bit_stream(request):
 
     bit_stream = "".join(bits)
 
-    print(bit_stream)
+    return bit_stream
