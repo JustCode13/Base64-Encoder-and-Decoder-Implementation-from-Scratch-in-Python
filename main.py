@@ -6,6 +6,9 @@ from encode.groups import _6bit_groups
 from encode.base64 import get_base64
 
 
+from decode.index import get_index_list
+
+
 def main():
     mode = get_mode()
     value = get_input()
@@ -23,6 +26,10 @@ def main():
         print(
             f"Ok: {final_result.get("ok")}\nMode: {final_result.get("mode")} | Result Text: {final_result.get("base64_text")}\nError: {final_result.get("error")}"
         )
+
+    else:
+        data = get_index_list(normalized_request["base64_text"])
+        print(data)
 
 
 if __name__ == "__main__":
