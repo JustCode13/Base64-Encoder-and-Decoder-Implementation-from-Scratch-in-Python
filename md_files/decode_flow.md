@@ -30,3 +30,7 @@ Base64 → chars → numbers → bits → bytes → text
 → b'Hi'
 → "Hi"                             # bytes.decode("utf-8")
 ```
+
+0 * 2 = 0
+1 * 2 = 2
+2 * 2 = 4

@@ -8,6 +8,7 @@ from encode.base64 import get_base64
 
 from decode.index import get_index_list
 from decode._6bit_groups import get_6bit_groups
+from decode._8bit_groups import get_8bit_groups
 
 
 def main():
@@ -31,7 +32,9 @@ def main():
     else:
         data = get_index_list(normalized_request["base64_text"])
         _6bit_groups = get_6bit_groups(data["index_list"])
+        _8bit_groups = get_8bit_groups(_6bit_groups, data["padding_length"])
 
+        print(_8bit_groups)
 
 
 if __name__ == "__main__":
